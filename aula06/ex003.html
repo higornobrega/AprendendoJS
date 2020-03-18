@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro programa...</title>
+    <style>
+        body{
+            background-color: aqua;
+            color: azure;
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1> Olá, Mundo!</h1>
+    <p>Já me livrei da maldição</p>
+    <script>
+        /*
+        ANOTAÇÕES
+        (Number + Number) -> Adição
+        (String + String) -> Concatenação
+        Number(variavel) -> Converte em número
+        Number.parceInt(variavel) -> Converte para inteiro
+        Number.parceFloat(variavel) -> Converte para Decimal
+        String(variavel) -> Converte para String
+        variavel.toString -> Converte para Strng
+        variavel.legth -> Quantidade de caracteres da string
+        document.write -> Escreve na página
+        document.writeln -> Escreve na página e quebra a linha
+        FORMATAÇÃO
+        (aspas)'alguma coisa'(aspas) + variavel + (aspas)'alguma coisa'(aspas) + variavel
+        (crase)`alguma coisa ${variavel} alguma coisa ${variavel}`(crase)
+        variavel.toUpperCase() -> Deixa tudo maiúsculo
+        variavel.toLowerCase() -> Deixa tudo minúsculo
+        dado.toFixed(quantidades_de_casas) -> Coloca a quantidade de casas após a virgula
+        dado.replace('.',',') -> Troca o ponto pela vírgula
+        dado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'}) -> Formata para a moeda Real (R$)
+        */
+        var n1 = window.prompt('Digite um número: ') //String
+        var n2 = window.prompt('Digite outro número: ') //String
+        var c = n1 + n2 //Concatenação
+        var s = Number(n1) + Number(n2) //Soma
+        window.alert('A soma dos valores é: ' + s)
+    </script>
+</body>
+</html>
