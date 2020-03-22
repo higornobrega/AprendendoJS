@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background: rgb(68, 125, 199);
+            color: white;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p class="por_classe">Aqui vai o resultado</p>
+    <p name="por_nome">Aprendendo a usar o <strong>DOM</strong> em JavaSript.</p>
+    <div id="por_id">Clique em mim</div>
+
+    <br>
+    <p>### A PARTIR DAQUI FOI ESCRIPO COM JAVASCRIPT ###</p>
+    <br>
+
+    <script>
+        /*
+        ANOTAÇÕES
+        innerText -> O que tem dentro sem formatação
+        innerHTML -> O que tem dentro com formatação
+        */
+        window.document.writeln('Olá<br>') //Escreve (write) no documento (página)
+        window.document.writeln(window.document.title + '<br>') //Escreve (write) no documento (página) o Título (title) que é da página (document)
+        window.document.write(window.navigator.appName + '<br>') //Escreve (write) no documento (página) o navegador(navagator) 
+        window.document.write(window.document.URL  + '<br>')//Escreve (write) no documento (página) a URL (URL) que é da página (document)
+        
+        /*
+        Selecionar por Marca (Tag)
+        Comando -> getElementsByTagName('tag_que_deseja_pegar')[qual_dessas_tags_deseja_pegar]
+        */
+        var corpo = window.document.body //Liga a variável corpo a bady do documento html
+        window.document.writeln('<br>SELECIONADOR POR MARCA (Tag)<br>') //Escreve (write) no documento (página)
+        var p1 = window.document.getElementsByTagName('p')[2] //Primeira Tag p do documento
+        window.document.write('Está escrito assim: ' + p1.innerText) ////Escreve (write) no documento (página) o conteúdo (innerText) de p1
+        p1.style.color = 'blue' //Muda a cor de p1
+        corpo.style.background = 'green' //Muda a cor do corpo
+
+        /*
+        Selecionar por ID
+        Comando -> getElementById('id_que_deseja_pegar')
+        
+        */
+        window.document.write('<br><br>SELECIONADOR POR ID<br>') //Escreve (write) no documento (página)
+        var d = window.document.getElementById('por_id') //Guarda o o id por_id na variável d
+        window.document.write(d.innerText) //Escreve (write) no documento (document)  o conteúde (innerText) de d
+        d.style.background = 'black' //Muda o background de d
+        d.innerText = 'CLIQUE EM MIM' //Muda o que tem dentro de d
+        /*
+        Selecionar por Nome
+        Comando -> getElementsByName('name_que_deseja_pegar')[qual_dessas_tags_deseja_pegar]
+        */
+        window.document.write('<br><br>SELECIONADOR POR NOME<br>')
+        var nome = window.document.getElementsByName('por_nome')[0]
+        window.document.write(nome.innerText)
+        
+        /*
+        Selecionar por Classe
+        Comando -> getElementsByClassName('class_que_deseja_pegar')[qual_dessas_tags_deseja_pegar]
+        
+        */
+        window.document.write('<br><br>SELECIONADOR POR CLASSE<br>')
+        var classe = window.document.getElementsByClassName('por_classe')[0]
+        window.document.write(classe.innerText)
+
+        /*
+        Selecionar por Seletor
+
+        Comando -> querySeletor('tag_que_deseja_pegar#_ou_.nome_da_tag_ou_id') usa # para id e . para classe
+        Comando -> querySeletorAll(tag_que_deseja_pegar)[qual_dessas_tags_deseja_pegar]
+        */
+        window.document.write('<br><br>SELECIONADOR POR SELETOR<br>')
+        var sel = window.document.querySelector('div#por_id')
+        var sel2 = window.document.querySelectorAll('p')[0]
+        window.document.write(sel.innerText + '<br>')
+        window.document.write(sel2.innerText)
+
+    </script>
+
+</body>
+</html>
