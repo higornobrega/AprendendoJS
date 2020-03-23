@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background: rgb(42, 139, 42);
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        ANOTAÇÕES
+        Eventos
+        onclick -> É ativado quando o mouse é clicado
+        onmouseenter -> É ativado quando o mouse entra
+        onmouseout -> É ativado quando o mouse sai
+        
+    -->
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">  <!--Quando clicar (onclick) vai chamar a função clicar(). Quando entrar (onmouseenter) chama a função entrar(). Quando sair (onmouseout) chama a função sair() -->
+        Interaja...
+    </div>
+    <script>
+        /*
+        ANOTAÇÕES
+        Eventos
+        onclick -> É ativado quando o mouse é clicado
+        onmouseenter -> É ativado quando o mouse entra
+        onmouseout -> É ativado quando o mouse sai
+        
+        Se não quiser colocar colocar o evento no HTML pode colocar para o JavaScrip monitorar os eventos com o
+        addEventListener('evento_sem_o_on',função_que_vai_chamar) 
+        */
+        
+        /*
+        //Tira os eventos do HTML
+        var a = window.document.getElementById('area') //Comenta ou apaga essa parte nas funções
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+        */
+        
+        function clicar() {
+            var a = window.document.getElementById('area')
+            a.innerText = 'Clicou!'
+            a.style.background = 'black'
+            
+        }
+        function entrar(){
+            var a = window.document.querySelector('div#area')
+            a.innerHTML = 'Entrou!'
+        }
+        function sair() {
+            var a = window.document.getElementsByTagName('div')[0]
+            a.innerText = 'Saiu!'
+        }
+    </script>
+</body>
+</html>
