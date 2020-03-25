@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturalidade</title>
+</head>
+<body>
+    <h1>Naturalidade</h1>
+    Qual país você nasceu: <input type="text" name="nas" id="nas">
+    <input type="button" value="Verificar" onclick="naturalidade()">
+    <div id="nat">Naturalidade</div>
+    <script>
+        function naturalidade() {
+            var nas = window.document.getElementById('nas')
+            var nat = window.document.querySelector('div#nat')
+            nas = nas.value.toUpperCase();
+            console.log(nas)
+            if (nas == 'BRASIL') {
+                nat.innerHTML = 'Brasileiro'
+            } else {
+                nat.innerHTML = 'Estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>
